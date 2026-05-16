@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.env/
+
+# Node
+node_modules/
+
+# Build
+dist/
+build/
+
+# Generated Files
+generated_images/
+exports/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Environment Variables
+.env
