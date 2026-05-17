@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+markdown2
+weasyprint
+pydantic
+
+langchain
+langchain-core
+langchain-community
+langchain-groq
+
+groq
+tavily-python
+langchain-tavily
+python-multipart
