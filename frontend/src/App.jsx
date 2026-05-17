@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import LandingPage from "./pages/LandingPage";
-import Dashboard from "./pages/Dashboard";
+import LandingPage from "./pages/LandingPage.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
 
 export default function App() {
   const [started, setStarted] = useState(false);
