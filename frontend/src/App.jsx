@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-import LandingPage from "./pages/LandingPage.jsx";
-import Dashboard from "./Pages/Dashboard.jsx";
+import LandingPage from "./components/LandingPage";
+import Dashboard from "./components/Dashboard";
 
 export default function App() {
+
   const [started, setStarted] = useState(false);
 
   if (started) {
