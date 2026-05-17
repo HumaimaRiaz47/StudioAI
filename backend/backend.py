@@ -252,32 +252,49 @@ def run_pipeline(
 # SAFE FILENAME
 # ========================================================
 
-    safe_filename = (
+    import re
 
-        topic
-        .strip()
+# ========================================================
+# SAFE FILENAME
+# ========================================================
 
-        .replace("\n", "_")
-        .replace("\r", "_")
+    safe_filename = topic.lower()
 
-        .replace(" ", "_")
+# remove invalid filesystem chars
 
-        .replace("/", "_")
-        .replace("\\", "_")
+    safe_filename = re.sub(
 
-        .replace(":", "_")
-        .replace("?", "_")
+        r'[<>:"/\\\\|?*“”‘’]',
 
-        .replace("*", "_")
-        .replace("\"", "_")
+        '',
 
-        .replace("<", "_")
-        .replace(">", "_")
-
-        .replace("|", "_")
-
-        .lower()
+        safe_filename
     )
+
+# replace spaces with underscore
+
+    safe_filename = safe_filename.replace(
+        " ",
+        "_"
+    )
+
+# remove commas/dots/newlines
+
+    safe_filename = re.sub(
+        r"[,.\n\r]+",
+        "",
+        safe_filename
+    )
+
+# keep filename short
+
+    safe_filename = safe_filename[:60]
+
+# fallback
+
+    if not safe_filename:
+
+        safe_filename = "studio_ai_article"
 
 # ========================================================
 # EXPORT
